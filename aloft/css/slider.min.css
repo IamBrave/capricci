@@ -1,0 +1,123 @@
+.slick-list,
+.slick-track {
+    position: relative;
+    height: 100%;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0)
+}
+
+.slick-loading .slick-track,
+.slick-slide .slick-loading .slick-slide .slick {
+    visibility: hidden
+}
+
+.slick-slider {
+    display: block;
+    position: relative;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent
+}
+
+.slick-list {
+    display: block;
+    overflow: hidden
+}
+
+.slick-list:focus {
+    outline: 0
+}
+
+.slick-list.dragging {
+    cursor: pointer;
+    cursor: hand
+}
+
+.slick-track {
+    top: 0;
+    left: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+.slick-track:after,
+.slick-track:before {
+    content: "";
+    display: table
+}
+
+.slick-track:after {
+    clear: both
+}
+
+.slick-slide {
+    min-height: 1px
+}
+
+.slick-slide img {
+    display: inline-block
+}
+
+.slick-slide.slick-loading img {
+    display: none
+}
+
+.slick-slide.dragging img {
+    pointer-events: none
+}
+
+.slick-slide .slick-initialized .slick-slide .slick {
+    display: block
+}
+
+.slick-slide .slick-vertical .slick-slide .slick {
+    display: block;
+    height: auto;
+    border: 1px solid transparent
+}
+
+.slick-dots {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100%;
+    margin: 30px 0 0;
+}
+
+.slick-dots li {
+    width: 10px;
+    height: 10px;
+    margin: 0 15px 0 0;
+    cursor: pointer
+}
+
+.slick-dots li:last-child {
+    margin: 0
+}
+
+.slick-dots li.slick-active span,
+.slick-dots li:hover span {
+    background-color: #f6871f
+}
+
+.slick-dots li span {
+    display: block;
+    height: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    background-color: #9c9c9c;
+    font-size: 0;
+    -webkit-transition: background-color .3s ease-in-out;
+    transition: background-color .3s ease-in-out
+}
