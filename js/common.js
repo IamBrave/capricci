@@ -1,4 +1,73 @@
 $(function() {
+/*---------------- Modal -------------------*/
+	$('.header-profile_login').on('click', function(e){
+		e.preventDefault();
+		var modal = document.querySelector('.modal');
+		var btnClose = modal.querySelector('.modal-close');
+
+		animateActive(modal);	
+		$('body').css('overflow-y', 'hidden');
+		
+		//удаление формы после закрытия окна и отправки сообщения
+		function closeModal(modal){
+			animateExit(modal);
+			$('body').css('overflow-y', 'scroll');
+		};
+		btnClose.addEventListener('click', function(){
+			closeModal(modal);
+		}, false);
+	});
+
+	$('.modal-tab').on('click', function(e){
+		e.preventDefault();
+		var ind = parseInt($(this).attr('data-index'));
+		var modalOld = document.querySelector('.modal-content.active');
+		var tabOld = document.querySelector('.modal-tab.active');
+		var modalNew = document.querySelector('.modal-content[data-index="' + ind + '"]');
+		if(!this.classList.contains('active')){
+			tabOld.classList.remove('active');
+			animateExit(modalOld);
+			this.classList.add('active');
+			function enter(){
+				animateActive(modalNew);
+			};
+			setTimeout(enter, 310);
+		}
+	})
+
+	//анимация
+	function animateActive (modal){
+		var handler = function(){
+			modal.classList.remove('active');
+			modal.removeEventListener('transitionend', handler);
+		};
+
+		modal.classList.add('enter');
+
+		raf(function(){
+			modal.classList.add('active');
+			modal.classList.remove('enter');
+		});
+	};
+
+	function animateExit (modal){
+		var handler = function (){
+			modal.classList.remove('exit');
+			modal.classList.remove('active');
+			modal.removeEventListener('transitionend', handler);
+		};
+		modal.classList.add('exit');
+		modal.addEventListener('transitionend', handler);
+	};
+
+
+	function raf(fn){
+		window.requestAnimationFrame(function(){
+			window.requestAnimationFrame(function(){
+				fn();
+			})
+		})
+	}
 
 /*----------------ScrollBar -------------------*/
         $('.scroll-pane').jScrollPane();
@@ -122,9 +191,9 @@ $(function() {
         zoomrange: [2, 8],
         zoomstart: 4,
         magnifiersize: [150, 150]		
-    });
+		});
 });
 
-// -----------------------------Modal----------------------
+
 
 

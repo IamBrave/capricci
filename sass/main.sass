@@ -247,12 +247,15 @@ header
 		flex-direction: row
 		align-items: center
 		padding-right: 30px
-		img
-			margin-right: 5px
-		p
+		svg
+			margin-right: 10px
+		span
+			position: relative
+			top: 1px
 			font-size: 16px
 			font-family: $latoLight
 			color: #787878
+		
 .header-phone
   padding: 0 20px
   border-left: 1px solid $light-grey-2
@@ -579,11 +582,23 @@ ol.best
 
 .modal
 	position: fixed
+	display: none
 	top: 0
 	left: 0
 	width: 100vw
 	height: 100vh
 	z-index: 200
+	transition: all 0.3s ease-in-out
+	&.active
+		display: flex
+		opacity: 1
+		transform: translate(0)
+		transition: all 0.3s ease-in-out
+	&.enter, &.exit
+		display: flex
+		opacity: 0
+		transform: translate(-50%)
+		transition: all 0.3s ease-in-out
 	&-bg
 		position: absolute
 		top: 0
@@ -596,18 +611,25 @@ ol.best
 		display: flex
 		flex-wrap: wrap
 		flex-direction: row
-		width: 30vw
+		width: 600px
+		min-height: 650px
+		max-height: 650px 
 		height: auto
 		top: 50%
 		left: 50%
 		transform: translate(-50%, -50%)
 		background: #fff
+	&-close
+		position: absolute
+		top: 5px
+		right: -30px
+		cursor: pointer
 	&-tab
 		display: flex
 		justify-content: center	 
 		align-items: center
 		width: 50%
-		height: 50px
+		height: 70px
 		font-size: 17px
 		font-family: "CormorantGaramond-Medium", sans-serif
 		font-weight: bold
@@ -618,5 +640,141 @@ ol.best
 			background: #9f9683
 			color: #fff
 	&-content
+		display: none
+		flex-direction: row
+		align-items: center
+		justify-content: space-between
+		flex-wrap: wrap
 		padding: 70px
+		transition: all 0.3s ease-in-out
+		&.active
+			display: flex
+			opacity: 1
+			transform: translate(0)
+		&.enter, &.exit
+			display: flex
+			opacity: 0
+			transition: all 0.3s ease-in-out
+		&.enter
+			transform: translate(-10%)
+		&.exit
+			transform: translate(10%)
+	&-input
+		width: 100%
+		padding: 15px 20px
+		margin-bottom: 20px
+		font-size: 17px
+		color: #787878
+		border: 1.4px solid #9f9683
+	&-checkbox
+		position: absolute
+		left: -9999px
+		&:checked + label
+			&:before
+				content: '\2714'
+				font-size: 17px
+	&-label
+		position: relative
+		width: 100%
+		padding-left: 40px
+		margin-bottom: 30px
+		font-size: 18px
+		color: #787878
+		cursor: pointer
+		&:before
+			content: ''
+			position: absolute
+			left: 0
+			top: 0
+			min-width: 25px
+			width: 25px
+			height: 25px
+			padding-left: 5px
+			padding-bottom: 2px
+			border: 1.4px solid #9f9683
+	&-link
+		display: flex
+		justify-content: center 
+		align-items: center
+		width: 100%
+		height: 60px
+		margin-bottom: 15px
+		padding-top: 2px
+		font-size: 14px
+		font-family: $latoBlack
+		text-transform: uppercase
+		letter-spacing: 2.5px
+		color: #fff
+		background: #9f9683
+		transition: all 0.25s ease-in 0s
+		svg
+			position: relative
+			top: -2px
+			width: 26px
+			height: 24px
+			margin-right: 10px
+			g.enter
+				transition: all 0.25s ease-in 0s
+		&:hover
+			background: #ffffff
+			color: #000
+			svg
+				g.enter
+					fill: #000
+	&-rememberPswd
+		margin-bottom: 20px
+		color: #787878
+		line-height: 1.2
+		border-bottom: 1px solid #787878
+		opacity: 0.8
+		&:hover
+			opacity: 1
+	&-desc
+		margin-bottom: 10px
+		font-size: 16px
+		width: 90%
+		line-height: 1.5
+		color: #c0c0c0
+	&-socLink
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 48%
+		height: 50px
+		color: #fff
+		font-size: 20px
+		background: #23589a
+		img
+			margin-right: 10px
+		&_vk
+			img
+				height: 15px
+		&_fb
+			img
+				height: 25px
+		&:hover
+			background: #497bac
+	&-title
+		font-size: 14px
+		font-weight: bold
+		text-transform: uppercase
+		color: #000
+		margin-bottom: 20px
+	&-list
+		margin-bottom: 20px
+		li
+			position: relative
+			padding-left: 40px
+			margin-bottom: 10px
+			font-size: 14px
+			color: #9f9683
+			img
+				position: absolute
+				left: 0
+
+
+
+
+
+
 	
