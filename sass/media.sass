@@ -1,0 +1,88 @@
+@media screen and (max-width: 768px)
+	html
+		overflow-x: hidden
+	.header
+		display: none
+	.header_mobile
+		position: fixed
+		top: 0
+		width: 100vw
+		display: flex
+		flex-direction: column
+		height: 120px
+		z-index: 2
+		.header
+			&-top
+				display: flex
+				flex-direction: row
+				justify-content: space-between
+				align-items: center
+				width: 100%
+				background: #f6f6f6
+		.logo
+			display: flex
+			justify-content: center 
+			align-items: center
+			height: 60px
+			font-family: "CormorantGaramond-Bold", san-serif
+			font-size: 23px
+			line-height: 23px
+			text-transform: uppercase
+    	letter-spacing: 1px
+		.burger
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: center
+			width: 68px
+			height: 60px
+			background: #9f9683
+			z-index: 4
+			&.close
+				.burger-line
+					&:nth-child(1)
+						transform: rotate(45deg)
+						top: 25px
+						position: fixed
+					&:nth-child(2)
+						opacity: 0
+					&:nth-child(3)
+						transform: rotate(-45deg)
+						top: 25px
+						position: fixed
+			&-line
+				width: 20px
+				height: 2px
+				background: #fff
+				transition: all 0.3s ease-in-out
+				&:nth-child(2)
+					margin: 6px 0
+			&-menu
+				position: fixed
+				display: none
+				top: 0
+				width: 100vw
+				height: 100vh
+				background: #9f9683
+				z-index: 3
+				&.active
+					display: flex
+			&-content
+				position: absolute
+				top: 70px
+				padding: 30px
+				color: #fff
+				.menu
+					display: flex
+					flex-direction: column
+					padding: 44px 0
+					li
+						line-height: 36px
+						a
+							color: #fff
+				.header-profile
+					span
+						color: #fff
+			&-tel
+				color: #fff
+				font-weight: bold
