@@ -2,6 +2,9 @@
   html {
     overflow-x: hidden;
   }
+  body {
+    padding-top: 120px;
+  }
   .header {
     display: none;
   }
@@ -35,6 +38,112 @@
             align-items: center;
     width: 100%;
     background: #f6f6f6;
+  }
+  .header_mobile .header-bottom {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    height: 60px;
+    padding-left: 13px;
+    padding-right: 20px;
+    background: #fff;
+  }
+  .header_mobile .header-bottom .categories-title {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0;
+    font-size: 17px;
+    color: #1f1f1f;
+    font-weight: 500;
+    font-family: "CormorantGaramond-Medium", sans-serif;
+    text-transform: uppercase;
+  }
+  .header_mobile .header-bottom .categories-title.active:after {
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+  .header_mobile .header-bottom .categories-title:after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: -20px;
+    width: 8px;
+    height: 8px;
+    border-left: 1px solid #222;
+    border-bottom: 1px solid #222;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  .header_mobile .header-bottom .categories-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 95%;
+    padding: 25px 16px;
+    background: rgba(255, 255, 255, 0.97);
+    display: none;
+  }
+  .header_mobile .header-bottom .categories-menu li {
+    width: 100%;
+    padding: 5px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-family: "CormorantGaramond-Medium", sans-serif;
+    text-transform: uppercase;
+    font-size: 17px;
+    color: #1f1f1f;
+  }
+  .header_mobile .header-bottom .categories-menu.active {
+    opacity: 1;
+    height: 100%;
+  }
+  .header_mobile .header-bottom .categories-menu.exit, .header_mobile .header-bottom .categories-menu.enter {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    opacity: 0;
+    height: 000.1px;
+  }
+  .header_mobile .header-bottom .header-love-btn {
+    width: 30px;
+    margin: 0 20px 0 auto;
+    background: transparent;
+  }
+  .header_mobile .header-bottom .header-cart {
+    width: auto;
+    padding: 0;
+    margin: 0 20px 0 0;
+    background: transparent;
+  }
+  .header_mobile .header-bottom .header-cart span.name {
+    display: none;
+  }
+  .header_mobile .header-bottom .header-cart__count {
+    font-size: 10px;
+    top: -5px;
+    right: -13px;
+    padding: 5px 7px;
   }
   .header_mobile .logo {
     display: -webkit-box;
@@ -75,7 +184,7 @@
   .header_mobile .burger.close .burger-line:nth-child(1) {
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
-    top: 25px;
+    top: 30px;
     position: fixed;
   }
   .header_mobile .burger.close .burger-line:nth-child(2) {
@@ -84,11 +193,11 @@
   .header_mobile .burger.close .burger-line:nth-child(3) {
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
-    top: 25px;
+    top: 30px;
     position: fixed;
   }
   .header_mobile .burger-line {
-    width: 20px;
+    width: 30px;
     height: 2px;
     background: #fff;
     -webkit-transition: all 0.3s ease-in-out;
@@ -133,11 +242,30 @@
   .header_mobile .burger-content .menu li a {
     color: #fff;
   }
+  .header_mobile .burger-content .header-profile svg {
+    width: 20px;
+    height: 20px;
+  }
   .header_mobile .burger-content .header-profile span {
     color: #fff;
   }
   .header_mobile .burger-tel {
     color: #fff;
     font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .header-profile {
+    padding: 0;
+    margin: 0 35px 0 auto;
+  }
+  .header-profile svg {
+    margin: 0 auto;
+    width: 20px;
+    height: 25px;
+  }
+  .header-profile span {
+    display: none;
   }
 }

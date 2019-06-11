@@ -1,6 +1,8 @@
 @media screen and (max-width: 768px)
 	html
 		overflow-x: hidden
+	body
+		padding-top: 120px
 	.header
 		display: none
 	.header_mobile
@@ -17,8 +19,83 @@
 				flex-direction: row
 				justify-content: space-between
 				align-items: center
-				width: 100%
+				width: 100% 
 				background: #f6f6f6
+			&-bottom
+				position: relative
+				display: flex
+				flex-direction: row
+				align-items: center
+				flex-wrap: wrap
+				height: 60px
+				padding-left: 13px
+				padding-right: 20px 
+				background: #fff
+				.categories
+					&-title
+						position: relative
+						display: flex 
+						align-items: center
+						margin: 0
+						font-size: 17px
+						color: #1f1f1f
+						font-weight: 500
+						font-family: "CormorantGaramond-Medium", sans-serif
+						text-transform: uppercase
+						&.active
+							&:after
+								transform: rotate(135deg)
+						&:after
+							content: ''
+							position: absolute
+							top: 10px
+							right: -20px
+							width: 8px
+							height: 8px
+							border-left: 1px solid #222
+							border-bottom: 1px solid #222 
+							transform: rotate(-45deg)
+					&-menu
+						position: absolute
+						top: 60px
+						left: 0
+						display: flex
+						flex-direction: column
+						width: 95%
+						padding: 25px 16px
+						background: rgba(256, 256, 256, .97)
+						display: none
+						li
+							width: 100%
+							padding: 5px 0
+							border-bottom: 1px solid #f0f0f0
+							font-family: "CormorantGaramond-Medium", sans-serif
+							text-transform: uppercase
+							font-size: 17px
+							color: #1f1f1f
+						&.active
+							opacity: 1
+							height: 100%
+						&.exit, &.enter
+							display: flex
+							opacity: 0
+							height: 000.1px
+				.header-love-btn
+					width: 30px
+					margin: 0 20px 0 auto
+					background: transparent 
+				.header-cart
+					width: auto
+					padding: 0
+					margin: 0 20px 0 0
+					background: transparent
+					span.name
+						display: none
+					&__count
+						font-size: 10px
+						top: -5px
+						right: -13px
+						padding: 5px 7px
 		.logo
 			display: flex
 			justify-content: center 
@@ -42,16 +119,16 @@
 				.burger-line
 					&:nth-child(1)
 						transform: rotate(45deg)
-						top: 25px
+						top: 30px
 						position: fixed
 					&:nth-child(2)
 						opacity: 0
 					&:nth-child(3)
 						transform: rotate(-45deg)
-						top: 25px
+						top: 30px
 						position: fixed
 			&-line
-				width: 20px
+				width: 30px
 				height: 2px
 				background: #fff
 				transition: all 0.3s ease-in-out
@@ -81,8 +158,23 @@
 						a
 							color: #fff
 				.header-profile
+					svg
+						width: 20px
+						height: 20px
 					span
 						color: #fff
 			&-tel
 				color: #fff
 				font-weight: bold
+
+
+@media screen and (max-width: 576px)
+	.header-profile
+		padding: 0
+		margin: 0 35px 0 auto
+		svg
+			margin: 0 auto
+			width: 20px
+			height: 25px
+		span
+			display: none
